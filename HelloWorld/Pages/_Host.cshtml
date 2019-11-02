@@ -1,4 +1,7 @@
-﻿@page "{*clientPath}"
+﻿@page "/"
+@namespace HelloWorld.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +12,8 @@
     <link href="site.css" rel="stylesheet" />
 </head>
 <body>
-    <app>@(await Html.RenderComponentAsync<App>())</app>
+    <div class="container">
+        <app>@(await Html.RenderComponentAsync<App>(RenderMode.ServerPrerendered))</app>
+    </div>
 </body>
 </html>
